@@ -30,7 +30,10 @@ class ProductList extends Component {
     render() {
       return (
         <div>
-            {this.state.products.map(prod => <Product product={prod} key={prod.id} />)}
+            <h2>Products</h2>
+            {this.state.products.map(prod => 
+                <Product product={prod} key={prod.id} addToCart={this.props.addToCart} loggedIn={this.props.loggedIn}/>
+            )}
         </div>
       );
     }
